@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+:root {
+    --black: #150605;
+    --red: #EA453C;
+    --blue: #0d0232;
+    --light-blue: #EFFBFE;
+    --green: #05482a;
+    --white: #ffffff;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    
+}
+.canvas{
+    height: 95vh;
+    position: relative;
+}
+.tinytext *{
+    font-size: 5px;
+    display: absolute;
+    bottom: 10px;
+}
+#dino {
+    width: 100px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+#cactus1 {
+    width: 50px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px
+}
+
+.jump {
+    animation-name: jump;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+}
+
+@keyframes jump {
+    0% {transform: translateY(0)}
+    50% {transform: translateY(-120px)}
+    100% {transform: translateY(0)}
+}
+
+.moveleft {
+    animation-name: moveleft;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moveleft {
+    0% {transform: translateX(0)}
+    50% {transform: translateX(-50vw)}
+    100% {transform: translateX(-100vw)}
+}

@@ -1,0 +1,22 @@
+{
+  "name": "js-dino-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanhackcode15/dinogame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanhackcode15/dinogame/issues"
+  },
+  "homepage": "https://github.com/yanhackcode15/dinogame#readme",
+  "dependencies": {
+    "craftyjs": "^0.9.0"
+  }
+}
