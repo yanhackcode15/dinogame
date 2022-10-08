@@ -6,15 +6,15 @@ dino.right = window.scrollX+document.querySelector('#dino').getBoundingClientRec
 dino.top = 0;
 dino.bottom = 0;
 
-cactus1.top = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().top;
-cactus1.bottom = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().bottom;
+cactus1.top = window.scrollY+document.querySelector('#cactus1').getBoundingClientRect().top;
+cactus1.bottom = window.scrollY+document.querySelector('#cactus1').getBoundingClientRect().bottom;
 cactus1.left = 0;
 cactus1.right = 0;
 
 
 var myInterval = setInterval("detectCollision()", 200)
 document.addEventListener('keypress', (event)=>{
-    if(event.key===" ") {start()}
+    if(event.key===" ") start()
 })
 
 
@@ -29,8 +29,8 @@ function move(){
 }
 
 function detectCollision(){
-    dino.top = window.scrollX+document.querySelector('#dino').getBoundingClientRect().top;
-    dino.bottom = window.scrollX+document.querySelector('#dino').getBoundingClientRect().bottom;
+    dino.top = window.scrollY+document.querySelector('#dino').getBoundingClientRect().top;
+    dino.bottom = window.scrollY+document.querySelector('#dino').getBoundingClientRect().bottom;
     cactus1.left = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().left;
     cactus1.right = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().right;
     
