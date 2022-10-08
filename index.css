@@ -69,3 +69,14 @@
     50% {transform: translateX(-50vw)}
     100% {transform: translateX(-100vw)}
 }
+.hidden {
+    display: none;
+}
+
+#gameovertext{
+    color: var(--black);
+    text-align: center;
+    left: 42%;
+    top: 20px;
+    position: absolute; 
+}
