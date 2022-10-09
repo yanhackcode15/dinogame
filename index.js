@@ -34,11 +34,16 @@ function detectCollision(){
     cactus1.left = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().left;
     cactus1.right = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().right;
     
-    
-    if ((dino.bottom>=cactus1.top&&dino.bottom<=cactus1.bottom)&&((dino.right>=cactus1.left&& dino.right<=cactus1.right)||(dino.right>=cactus1.right&& dino.left<=cactus1.left))) {
-       gameover();
+    if (verticalCollision()&&horizontalCollision()) gameover();
+}
 
-    } 
+function verticalCollision(){
+    return dino.bottom>=cactus1.top&&dino.bottom<=cactus1.bottom?console.log('vertical')||true:false;
+}
+
+function horizontalCollision(){
+
+    return ((dino.right>=cactus1.left&& dino.right<=cactus1.right)||(dino.left>=cactus1.left&& dino.left<=cactus1.right)||(dino.right>=cactus1.right&&dino.left<=cactus1.left))?console.log('honri')||true: false;
 }
 
 function gameover() {
