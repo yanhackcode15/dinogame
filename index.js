@@ -12,7 +12,7 @@ cactus1.left = 0;
 cactus1.right = 0;
 
 
-var myInterval = setInterval("detectCollision()", 200)
+var myInterval = setInterval(detectCollision, 200)
 document.addEventListener('keypress', (event)=>{
     if(event.key===" ") start()
 })
@@ -29,6 +29,7 @@ function move(){
 }
 
 function detectCollision(){
+    console.log("detect collision")
     dino.top = window.scrollY+document.querySelector('#dino').getBoundingClientRect().top;
     dino.bottom = window.scrollY+document.querySelector('#dino').getBoundingClientRect().bottom;
     cactus1.left = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().left;
@@ -38,21 +39,22 @@ function detectCollision(){
 }
 
 function verticalCollision(){
-    return dino.bottom>=cactus1.top&&dino.bottom<=cactus1.bottom?console.log('vertical')||true:false;
+    return dino.bottom>=cactus1.top&&dino.bottom<=cactus1.bottom?true:false;
 }
 
 function horizontalCollision(){
 
-    return ((dino.right>=cactus1.left&& dino.right<=cactus1.right)||(dino.left>=cactus1.left&& dino.left<=cactus1.right)||(dino.right>=cactus1.right&&dino.left<=cactus1.left))?console.log('honri')||true: false;
+    return ((dino.right>=cactus1.left&& dino.right<=cactus1.right)||(dino.left>=cactus1.left&& dino.left<=cactus1.right)||(dino.right>=cactus1.right&&dino.left<=cactus1.left))? true:false;
 }
 
 function gameover() {
     clearInterval(myInterval);
-    document.getElementById('cactus1').className=""
-    document.getElementById('gameovertext').className=""
+    document.getElementById('cactus1').className="";
+    document.getElementById('gameovertext').className="";
 }
 
 function start(){
+    myInterval = setInterval(detectCollision, 200);
     jump();
     if (document.getElementById('cactus1').className==="moveleft"){}
     else move();
