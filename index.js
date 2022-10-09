@@ -29,7 +29,6 @@ function move(){
 }
 
 function detectCollision(){
-    console.log("detect collision")
     dino.top = window.scrollY+document.querySelector('#dino').getBoundingClientRect().top;
     dino.bottom = window.scrollY+document.querySelector('#dino').getBoundingClientRect().bottom;
     cactus1.left = window.scrollX+document.querySelector('#cactus1').getBoundingClientRect().left;
